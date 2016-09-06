@@ -1,4 +1,13 @@
 <h1><%= @industry.name %></h1>
+<ul>
+  <% @industry.businesses.each do |business| %>
+    <li><%= link_to business.name, edit_industry_business_path(@industry,business) %></li>
+  <% end %>
+</ul>
+
+<p>
+  <%= link_to "Add a business", new_industry_business_path(@industry) %>
+</p>
 
 <p>
   <%= link_to "Edit", edit_industry_path(@industry) %>

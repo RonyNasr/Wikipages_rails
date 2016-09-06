@@ -1,3 +1,5 @@
 Rails.application.routes.draw do
-  resources :industries
+  resources :industries do
+    resources :businesses
+  end
 end

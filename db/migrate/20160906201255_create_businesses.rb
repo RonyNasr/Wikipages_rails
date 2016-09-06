@@ -6,6 +6,7 @@ class CreateBusinesses < ActiveRecord::Migration[5.0]
       t.column :address, :string
       t.column :website, :string
       t.column :hours, :string
+      t.column :industry_id, :integer
 
       t.timestamps
     end
