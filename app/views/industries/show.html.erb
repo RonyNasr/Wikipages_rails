@@ -1,0 +1,13 @@
+<h1><%= @industry.name %></h1>
+
+<p>
+  <%= link_to "Edit", edit_industry_path(@industry) %>
+</p>
+<p>
+  <%= link_to "Delete", industry_path(@industry), :data => {
+    :confirm => "Are you sure?", :method => "delete"} %>
+</p>
+
+<p>
+  <%= link_to "Return to industries", industries_path %>
+</p>

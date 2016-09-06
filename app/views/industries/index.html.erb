@@ -2,7 +2,9 @@
 <ul>
   <% @industries.each do |industry| %>
     <li>
-      <%= industry.name %>
+      <%= link_to industry.name, industry_path(industry) %>
     </li>
   <% end %>
 </ul>
+
+<%= link_to "New Industry", new_industry_path %>
