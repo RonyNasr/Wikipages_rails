@@ -30,6 +30,15 @@ class BusinessesController < ApplicationController
       render :edit
     end
   end
+
+  def destroy
+    @industry = Industry.find(params[:industry_id])
+    @business = Business.find(params[:id])
+    
+    @business.destroy
+    redirect_to industry_path(@industry)
+  end
+
 private
   def business_params
     params.require(:business).permit(:name, :phone, :address, :website, :hours)

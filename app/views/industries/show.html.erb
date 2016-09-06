@@ -1,8 +1,13 @@
 <h1><%= @industry.name %></h1>
 <ul>
   <% @industry.businesses.each do |business| %>
-    <li><%= link_to business.name, edit_industry_business_path(@industry,business) %></li>
-  <% end %>
+    <li>
+    <%= link_to business.name, edit_industry_business_path(@industry,business) %>
+      <%= link_to "Delete business", industry_business_path(@industry, business),
+          :data => {:confirm => "Are you sure?",
+          :method => "delete"} %>
+    </li>
+    <% end %>
 </ul>
 
 <p>
